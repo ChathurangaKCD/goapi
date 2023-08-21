@@ -42,7 +42,7 @@ jobs:
           --header 'Content-Type: application/json' \
           --data-raw '{
             "component_id": "e30a93aa-9129-4df9-9651-37b5ecced83d",
-            "version_id": "05ba2dc3-7421-46f7-a268-5839430d12ba",
+            "version_id": "ccce6026-1da6-4268-8407-295232c29d78",
             "token": "'${TOKEN}'",
             "image": "registry.docker.com/'${DOCKER_IMAGE_NAME}':'${TAG}'"
           }'
