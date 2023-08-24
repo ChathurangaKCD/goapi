@@ -13,13 +13,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: docker login
         env:
-          DOCKER_USER: ${{secrets.DOCKER_USER}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-          DOCKER_HOST: ${{secrets.DOCKER_HOST}}
         run: |
           echo $DOCKER_PASSWORD > sc.im
           docker login -u _json_key --password-stdin https://us-east1-docker.pkg.dev < sc.im
-          # docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $DOCKER_HOST
       - name: Build the Docker image
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
