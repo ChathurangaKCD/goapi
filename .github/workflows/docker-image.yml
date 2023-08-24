@@ -18,7 +18,7 @@ jobs:
           DOCKER_HOST: ${{secrets.DOCKER_HOST}}
         run: |
           echo $DOCKER_PASSWORD > sc.im
-          cat sc.im | docker login -u _json_key --password-stdin https://us-east1-docker.pkg.dev
+          docker login -u _json_key --password-stdin https://us-east1-docker.pkg.dev < sc.im
           # docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $DOCKER_HOST
       - name: Build the Docker image
         env:
